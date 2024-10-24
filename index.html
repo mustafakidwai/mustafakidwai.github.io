@@ -6,6 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mustafa Kidwai - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the pop-up modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: rgba(9, 9, 9, 0.726);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .open-modal-btn {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +56,7 @@
             <h1>Mustafa Kidwai</h1>
             <nav aria-label="Primary Navigation">
                 <ul>
-                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#" class="open-modal-btn">About Me</a></li>
                     <li><a href="#education-experience">Education & Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -24,12 +65,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="about" class="hero">
-        <img src="mustafa.jpg" alt="Portrait of Mustafa Kidwai" class="profile-pic">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2 class="highlighted-text">Tech Enthusiast | Business Strategist | Problem Solver</h2>
+    <!-- About Me Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">Close</button>
+            <h2>Tech Enthusiast | Business Strategist | Problem Solver</h2>
             <p>
                 I’m Mustafa Kidwai, a tech enthusiast passionate about integrating technology with business strategy. 
                 I’m currently pursuing an MSc in Management (Business Analytics) at Ivey Business School and hold a bachelor's in Electrical Engineering.
@@ -39,7 +79,7 @@
                 In my free time, I enjoy hiking, kayaking, playing soccer, and exploring new music genres.
             </p>
         </div>
-    </section>
+    </div>
 
     <!-- Education and Work Experience Section -->
     <section id="education-experience" class="section grid-container">
@@ -109,12 +149,28 @@
         <p>&copy; 2024 Mustafa Kidwai. All rights reserved.</p>
     </footer>
 
-    <!-- External Scripts or Analytics -->
+    <!-- JavaScript for Modal Functionality -->
     <script>
-        // Optional JavaScript for interactive elements
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('focus', () => link.classList.add('focused'));
-            link.addEventListener('blur', () => link.classList.remove('focused'));
+        const openModalBtn = document.querySelector('.open-modal-btn');
+        const modal = document.getElementById('aboutModal');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        // Open the modal
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();  // Prevent default link behavior
+            modal.style.display = 'flex';
+        });
+
+        // Close the modal when clicking the close button
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
