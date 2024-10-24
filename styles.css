@@ -11,12 +11,13 @@ body {
     background-size: cover;
 }
 
+/* Headings */
 h1, h2 {
     text-align: center;
     margin-bottom: 10px;
 }
 
-/* Navbar */
+/* Navbar Styling */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
@@ -33,12 +34,17 @@ h1, h2 {
 
 .navbar ul li a {
     text-decoration: none;
-    color: white;
+    color: #90EE90; /* Light Green */
     transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
-    color: #4CAF50;
+.navbar ul li a:hover, .navbar ul li a:focus {
+    color: #4CAF50; /* Darker Green */
+}
+
+.navbar h1 {
+    color: #90EE90;
+    margin: 0;
 }
 
 /* Hero Section */
@@ -50,6 +56,7 @@ h1, h2 {
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     padding: 40px;
+    flex-wrap: wrap;
 }
 
 .profile-pic {
@@ -60,19 +67,28 @@ h1, h2 {
     margin-right: 20px;
 }
 
+/* Text inside Hero Section */
 .hero-content h2 {
     font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .hero-content p {
-    margin: 10px 0;
+    color: #D3D3D3;
     font-size: 1.1rem;
+    margin: 10px 0;
 }
 
-/* Grid for Education and Experience */
+/* Highlighted Text Styling */
+.highlighted-text {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Grid for Education & Experience */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
     max-width: 1200px;
     margin: auto;
@@ -84,6 +100,26 @@ h1, h2 {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    color: #80deea;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.education h2, .experience h2 {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Styling for Education & Work Details */
+.education p, .education ul li, .experience p, .experience ul li {
+    color: #D3D3D3;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Projects Section */
@@ -92,6 +128,7 @@ h1, h2 {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 20px;
 }
 
 .project-card {
@@ -103,9 +140,22 @@ h1, h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-card:hover {
+.project-card:hover, .project-card:focus-within {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card a.button {
+    color: #8A2BE2;
+    text-decoration: none;
+}
+
+.project-card a.button:hover, .project-card a.button:focus {
+    text-decoration: underline;
 }
 
 /* Contact Section */
@@ -115,6 +165,17 @@ h1, h2 {
     text-align: center;
 }
 
+.contact-links a {
+    color: #90EE90;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contact-links a:hover, .contact-links a:focus {
+    color: #4CAF50;
+}
+
+/* Contact Icons */
 .contact-icons {
     display: flex;
     justify-content: center;
@@ -127,7 +188,7 @@ h1, h2 {
     transition: transform 0.3s;
 }
 
-.contact-icons img:hover {
+.contact-icons img:hover, .contact-icons img:focus {
     transform: scale(1.2);
 }
 
@@ -135,4 +196,46 @@ h1, h2 {
 footer p {
     margin-top: 10px;
     color: #ccc;
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Optional Project Colors */
+.project-card h3.red {
+    color: red;
+}
+
+.project-card h3.blue {
+    color: blue;
+}
+
+.project-card h3.yellow {
+    color: yellow;
+}
+
+.project-card h3.orange {
+    color: orange;
+}
+
+/* Accessibility Improvements */
+:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
 }

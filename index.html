@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mustafa Kidwai - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Header with Navigation -->
     <header>
         <div class="navbar">
             <h1>Mustafa Kidwai</h1>
-            <nav>
+            <nav aria-label="Primary Navigation">
                 <ul>
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#education-experience">Education & Experience</a></li>
@@ -23,87 +26,97 @@
 
     <!-- Hero Section -->
     <section id="about" class="hero">
-        <img src="mustafa.jpg" alt="Mustafa Kidwai" class="profile-pic">
-        <div class="hero-overlay"></div> <!-- Background overlay for readability -->
+        <img src="mustafa.jpg" alt="Portrait of Mustafa Kidwai" class="profile-pic">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Hello, I'm Mustafa Kidwai!</h2>
+            <h2 class="highlighted-text">Tech Enthusiast | Business Strategist | Problem Solver</h2>
             <p>
-                Hi, I’m Mustafa. I’m a tech enthusiast, creative problem solver, and passionate about bridging technology with business strategy. 
-                Currently, I’m pursuing my Master of Science in Management at Ivey Business School, specializing in Business Analytics, and hold 
-                a bachelor's degree in Electrical Engineering. I’m deeply interested in how technology shapes our daily lives and constantly 
-                on the lookout for impactful problems to solve.
+                I’m Mustafa Kidwai, a tech enthusiast passionate about integrating technology with business strategy. 
+                I’m currently pursuing an MSc in Management (Business Analytics) at Ivey Business School and hold a bachelor's in Electrical Engineering.
             </p>
             <p>
-                During my time as an AI Analyst at Deloitte, I gained first-hand experience in how critical data is in today’s decision-making 
-                landscape. It became clear to me that data quality, authenticity, and availability are essential, as they form the foundation 
-                of every key business decision—after all, data truly is the new oil.
-            </p>
-            <p>
-                Outside of work, I enjoy staying active with hiking, kayaking, and soccer. I’m also an avid music lover, always exploring new 
-                sounds across genres.
+                Previously, I worked at Deloitte Consulting, where I leveraged data to support strategic decisions and develop analytical tools. 
+                In my free time, I enjoy hiking, kayaking, playing soccer, and exploring new music genres.
             </p>
         </div>
     </section>
-    
 
+    <!-- Education and Work Experience Section -->
     <section id="education-experience" class="section grid-container">
         <div class="education">
             <h2>Education</h2>
-            <img src="ivey-logo.png" alt="Ivey Business School Logo">
-            <p><strong>Ivey Business School, Western University</strong></p>
+            <img src="ivey-logo.png" alt="Ivey Business School Logo" class="institution-logo">
             <p>London, ON | Sep 2024 – Dec 2025</p>
-            <p><strong>Master of Science, Business Analytics</strong></p>
+            <p><strong>Candidate for MSc in Management, Business Analytics</strong></p>
             <ul class="education-details">
                 <li>Recipient of the Richard Ivey MSc Excellence Award</li>
                 <li>Vice President, MSc Ivey Pro-Bono Analytics & Strategy Club</li>
-                <li>Coursework: Data Modeling, Applied Statistics, A/B Testing</li>
             </ul>
         </div>
 
         <div class="experience">
             <h2>Work Experience</h2>
-            <img src="deloitte-logo.png" alt="Deloitte Logo">
-            <p><strong>AI Analyst</strong> - Deloitte (2022 – 2024)</p>
+            <img src="deloitte-logo.png" alt="Deloitte Logo" class="institution-logo">
+            <p><strong>AI Analyst</strong> | Jun 2022 – Aug 2024</p>
+            <ul class="experience-details">
+                <li>Gained exposure to diverse North American industries</li>
+                <li>Led analytical and data-driven initiatives</li>
+                <li>Awarded a Spot Award for exceptional performance</li>
+            </ul>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="section">
         <h2>Projects</h2>
         <div class="projects-container">
             <div class="project-card">
-                <h3>Used Cars Price Prediction</h3>
+                <h3 class="red">Used Cars Price Prediction</h3>
                 <p>Developed a machine learning model to predict used car prices.</p>
                 <a href="https://github.com/mustafakidwai/Used-cars-prediction" target="_blank" class="button">View on GitHub</a>
             </div>
 
             <div class="project-card">
-                <h3>Medical Insurance Price Prediction</h3>
+                <h3 class="blue">Medical Insurance Price Prediction</h3>
                 <p>Estimated insurance prices based on demographic attributes.</p>
                 <a href="https://github.com/mustafakidwai/Medical-Insurance-Price-Prediction" target="_blank" class="button">View on GitHub</a>
             </div>
 
             <div class="project-card">
-                <h3>Netflix Data Analysis</h3>
-                <p>Performed analysis to uncover content trends on Netflix.</p>
-                <a href="https://github.com/mustafakidwai/Netflix-data-analysis" target="_blank" class="button">View on GitHub</a>
+                <h3 class="yellow">SuperStore Sales Analysis using PowerBI</h3>
+                <p>Developed an interactive Power BI dashboard to analyze Superstore Sales Data.</p>
+                <a href="https://github.com/mustafakidwai/Superstore-Analysis_Powerbi" target="_blank" class="button">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3 class="orange">Data Mart Sales Analysis using SQL</h3>
+                <p>Analyzed and cleansed retail sales data using SQL.</p>
+                <a href="https://github.com/mustafakidwai/DataMart-Case-Study-using-SQL" target="_blank" class="button">View on GitHub</a>
             </div>
         </div>
     </section>
 
+    <!-- Footer with Contact Information -->
     <footer id="contact">
         <h2>Contact Me</h2>
-        <div class="contact-icons">
-            <a href="https://linkedin.com" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn">
-            </a>
-            <a href="mailto:mkidwai.msc2025@ivey.ca">
-                <img src="email-icon.png" alt="Email">
-            </a>
-            <a href="resume.pdf" target="_blank">
-                <img src="resume-icon.png" alt="Resume">
-            </a>
+        <div class="contact-links">
+            <p>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+                <a href="mailto:mkidwai.msc2025@ivey.ca">Email</a> |
+                <a href="resume.pdf" target="_blank">Resume</a>
+            </p>
         </div>
         <p>&copy; 2024 Mustafa Kidwai. All rights reserved.</p>
     </footer>
+
+    <!-- External Scripts or Analytics -->
+    <script>
+        // Optional JavaScript for interactive elements
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('focus', () => link.classList.add('focused'));
+            link.addEventListener('blur', () => link.classList.remove('focused'));
+        });
+    </script>
 </body>
+
 </html>
