@@ -24,28 +24,50 @@ h1, h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
+/* Navbar Links */
 .navbar ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    padding: 0;
+    margin: 0;
 }
 
+/* Navbar Link Items */
 .navbar ul li a {
     text-decoration: none;
-    color: #90EE90; /* Light Green */
+    color: #90EE90;
     transition: color 0.3s;
 }
 
 .navbar ul li a:hover, .navbar ul li a:focus {
-    color: #4CAF50; /* Darker Green */
+    color: #4CAF50;
 }
 
 .navbar h1 {
     color: #90EE90;
     margin: 0;
 }
+
+/* Media Queries for Navbar on Mobile Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Align links in a column */
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/
 
 /* Hero Section */
 .hero {
@@ -122,13 +144,28 @@ h1, h2 {
     line-height: 1.6;
 }
 
-/* Projects Section */
+
+ /* Projects Section */
 .projects-container {
     display: flex;
+    color: #D3D3D3;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
+}
+/* Apply Green Color to the Projects Heading */
+#projects h2 {
+    color: #4CAF50; /* Green Color */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.projects-container h2 {
+    color: #4CAF50; /* Matching Green Color */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .project-card {
@@ -161,6 +198,7 @@ h1, h2 {
 /* Contact Section */
 #contact {
     background-color: rgba(0, 0, 0, 0.8);
+    color: #4CAF50;
     padding: 20px;
     text-align: center;
 }
@@ -219,19 +257,20 @@ footer p {
 
 /* Optional Project Colors */
 .project-card h3.red {
-    color: red;
+    color: green;
+    
 }
 
 .project-card h3.blue {
-    color: blue;
+    color: green;
 }
 
 .project-card h3.yellow {
-    color: yellow;
+    color: green;
 }
 
 .project-card h3.orange {
-    color: orange;
+    color: green;
 }
 
 /* Accessibility Improvements */
@@ -299,3 +338,99 @@ footer p {
 .modal-content p {
     color: #B0B0B0; /* Light Gray Color */
 }
+
+//* Certifications Section */
+#certifications {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#certifications h2 {
+    color: #4CAF50; /* Green heading for consistency */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Certificates Container */
+.certificates-container {
+    color: #D3D3D3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Certificate Container */
+.certificate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px; /* Adjust container width if necessary */
+}
+
+/* Certificate Thumbnail with Proper Scaling */
+.certificate img {
+    width: 100%;  /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Allow taller certificates to fit without cutting */
+    object-fit: contain; /* Prevent image cropping */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Styling for Certificate Display */
+#certificateModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+#certificateModal .modal-content {
+    background-color: rgba(34, 34, 34, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+#certificateModal img {
+    max-width: 100%; /* Ensure the enlarged image fits */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 90vh; /* Fit the image within the viewport height */
+    border-radius: 8px;
+    margin: 10px 0;
+    object-fit: contain; /* Prevent any part from being cropped */
+}
+
+/* Close Button in Certificate Modal */
+#certificateModal .close-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#certificateModal .close-btn:hover {
+    background-color: darkred;
+}
+
+
