@@ -447,3 +447,32 @@ footer p {
     align-items: center;
 }
 
+/* Project Image Styling */
+.project-image {
+    width: 100%; /* Make the image take full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add spacing between the project description and the image */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visual appeal */
+}
+
+/* Project Card Adjustments */
+.project-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Scale and Shadow Effect on Hover */
+.project-card:hover, .project-card:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+
